@@ -7,7 +7,7 @@ const firebaseConfig = {
 
   authDomain: "restaurant-authentication.firebaseapp.com",
 
-  databaseURL: "https://restaurant-authentication-default-rtdb.europe-west1.firebasedatabase.app",
+  //databaseURL: "https://restaurant-authentication-default-rtdb.europe-west1.firebasedatabase.app",
 
   projectId: "restaurant-authentication",
 
@@ -26,4 +26,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-export const db = getDatabase()
+//export const db = getDatabase()
