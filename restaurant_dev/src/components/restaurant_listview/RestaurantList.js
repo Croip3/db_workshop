@@ -38,52 +38,16 @@ const RestaurantList = () => {
     get();
   }, []);
 
-  /* const createRestaurant = (event) => {
-        event.preventDefault();
-        const restaurantRef = firebase.database().ref("Restaurant");
-        const restaurant = {
-            restaurantName,
-          complete: false,
-        };
-        restaurantRef.push(restaurant);
-        setRestaurantName("");
-      }; */
-
   const writeRestauraurants = (name, city, street) => {
-    //const db = getDatabase()
-    const rf = ref(db, "restaurants/");
-    push(rf, {
-      name: name,
-      city: city,
-      street: street,
-    });
   };
 
   const get = () => {
-    //const dbt = getDatabase()
-    const restaurantsRef = ref(db, "restaurants/");
-    onValue(restaurantsRef, (data) => {
-      if (data.val() === null) return;
-
-      setRestaurantData(data.val());
-      const newRestaurants = Object.keys(data.val());
-      setRestaurantIds(newRestaurants);
-    });
   };
 
   const deleteRestaurantById = (id) => {
-    console.log("Delete: ", id);
-    const deleteRef = ref(db, "restaurants/" + id);
-    remove(deleteRef);
   };
 
   const updateRestaurantById = (id, name, city, street) => {
-    const updateRef = ref(db, "restaurants/" + id);
-    update(updateRef, {
-      name: name,
-      city: city,
-      street: street,
-    });
   };
 
   const restaurantList = restaurantIds.map((r) => (
@@ -102,7 +66,7 @@ const RestaurantList = () => {
   ));
 
   // only Helper/Test functions !
-  const restaurantsEmpty = () => {
+  /*const restaurantsEmpty = () => {
     if (restaurantIds.length === 0) return false;
     return true;
   };
@@ -115,7 +79,7 @@ const RestaurantList = () => {
 
   const updateTest = () => {
     updateRestaurantById(restaurantIds[0], "Nudelio", "Hamburg", "Ackerstraße");
-  };
+  };*/
 
   return (
     <>
